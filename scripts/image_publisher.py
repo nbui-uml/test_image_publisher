@@ -9,10 +9,10 @@ pub = rospy.Publisher("spot/camera/frontright/image", ImageMsg, queue_size=10)
 pub2 = rospy.Publisher("spot/camera/frontleft/image", ImageMsg, queue_size=10)
 img = Image.open("/home/csrobot/catkin_ws/src/test_image_publisher/resource/amongus.jpg")
 img = img.convert("RGB")
-img = img.rotate(90)
+img = img.rotate(90,expand=1)
 img2 = Image.open("/home/csrobot/catkin_ws/src/test_image_publisher/resource/lechonk.jpg")
 img2 = img2.convert("L")
-img2 = img2.rotate(90)
+img2 = img2.rotate(90,expand=1)
 
 msg = ImageMsg()
 msg.height = img.height
